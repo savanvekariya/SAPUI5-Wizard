@@ -1,0 +1,34 @@
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:form="sap.ui.layout.form">
+    <Page id="page" title="{i18n>title}">
+<content>
+    <Wizard id="wizardId" complete="onWizardCompleted" finishButtonText="Submit">
+        <WizardStep id="firstWizard" title="Diaclaimer" validated="true">
+            <Text id="_IDGenText1" text="Kindly read the terms and condition before proceeding."></Text>            
+        </WizardStep>
+        <WizardStep id="secondWizard" title="Personal Information" validated="false" activate="secondValidation">
+            <form:SimpleForm id="_IDGenSimpleForm1">
+                <Label id="_IDGenLabel1" text="Name"></Label>
+                <Input id="nameId" type="Text" placeholder="Enter atleast 6 charecters" liveChange="secondValidation"></Input>
+                <Label id="_IDGenLabel2" text="Age"></Label>
+                <Input id="ageId" type="Text" placeholder="You should be atleast 18 years old" liveChange="secondValidation"></Input>
+            </form:SimpleForm>
+        </WizardStep>
+        <WizardStep id="thirdWizard" title="Optional Details" validated="true">
+            <form:SimpleForm id="_IDGenSimpleForm2">
+                <Label id="_IDGenLabel3" text="Your Bio"></Label>
+                <Input id="bioId" type="Text" placeholder="Enter Your bio"></Input>
+                <Label id="_IDGenLabel4" text="Weight"></Label>
+                <Input id="weighrId" type="Text" placeholder="Enter your weight"></Input>
+            </form:SimpleForm>
+        </WizardStep>
+        <WizardStep id="fourWizard" title="Confirmation" validated="false" activate="thirdValidation">
+            <form:SimpleForm id="_IDGenSimpleForm3">
+                <CheckBox id="confirmationCheckbox" text="Are you sure you want to submit the form?" selected="false" select="thirdValidation"></CheckBox>
+            </form:SimpleForm>
+        </WizardStep>
+    </Wizard>
+</content>
+    </Page>
+</mvc:View>
